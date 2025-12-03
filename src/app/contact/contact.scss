@@ -1,0 +1,106 @@
+.contact-section {
+    padding: 6rem 0;
+
+    .contact-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .contact-header {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .contact-text {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .email-link {
+            display: inline-block;
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 1.2rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .contact-form {
+        padding: 0;
+
+        .form-group {
+            margin-bottom: 1.5rem;
+
+            label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: 500;
+                color: var(--text-primary);
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                padding: 1rem;
+                border: 1px solid var(--border-color);
+                border-radius: 12px;
+                font-family: var(--font-sans);
+                font-size: 1rem;
+                outline: none;
+                transition: var(--transition);
+                background-color: var(--bg-secondary);
+                color: var(--text-primary);
+
+                &:focus {
+                    border-color: var(--accent-primary);
+                    background-color: var(--bg-primary);
+                    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+                }
+
+                &::placeholder {
+                    color: var(--text-secondary);
+                }
+            }
+
+            textarea {
+                min-height: 150px;
+                resize: vertical;
+            }
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--text-primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+
+            &:hover {
+                background: var(--accent-primary);
+                transform: translateY(-2px);
+                box-shadow: var(--shadow);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+    }
+}

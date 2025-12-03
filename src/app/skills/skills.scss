@@ -1,0 +1,137 @@
+.skills-section {
+    padding: 6rem 0;
+    overflow: hidden;
+
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+        background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .skills-universe {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4rem;
+        perspective: 1000px;
+    }
+
+    .planet {
+        position: relative;
+        width: 280px;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.5s ease;
+
+        &:hover {
+            transform: scale(1.05);
+
+            .orbit-items .tech-item {
+                animation-play-state: paused;
+                background: var(--accent-primary);
+                color: white;
+            }
+        }
+
+        .planet-core {
+            width: 120px;
+            height: 120px;
+            background: var(--bg-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+            z-index: 2;
+            border: 2px solid var(--border-color);
+
+            h3 {
+                margin: 0;
+                font-size: 1.2rem;
+                color: var(--text-primary);
+            }
+        }
+
+        .orbit-items {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: orbit 20s linear infinite;
+        }
+
+        .tech-item {
+            position: absolute;
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+
+            // Positioning items in a circle
+            &:nth-child(1) {
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &:nth-child(2) {
+                top: 30%;
+                right: 0;
+                transform: translate(50%, -50%);
+            }
+
+            &:nth-child(3) {
+                bottom: 30%;
+                right: 0;
+                transform: translate(50%, 50%);
+            }
+
+            &:nth-child(4) {
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 50%);
+            }
+
+            &:nth-child(5) {
+                top: 30%;
+                left: 0;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// Counter-rotate items to keep text upright
+.tech-item {
+    animation: counter-orbit 20s linear infinite;
+}
+
+@keyframes counter-orbit {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
