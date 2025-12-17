@@ -1,0 +1,124 @@
+.sidebar {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 0;
+
+    .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .hero-info {
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .bio {
+            color: var(--text-secondary);
+            max-width: 300px;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+    }
+
+    .nav-menu {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-bottom: 1rem;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    color: var(--text-secondary);
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    letter-spacing: 0.1em;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    padding: 0.5rem 0;
+
+                    .line {
+                        display: inline-block;
+                        width: 2rem;
+                        height: 1px;
+                        background-color: var(--text-secondary);
+                        margin-right: 1rem;
+                        transition: all 0.2s ease;
+                    }
+
+                    &:hover,
+                    &.active {
+                        color: var(--accent-primary);
+
+                        .line {
+                            width: 4rem;
+                            background-color: var(--accent-primary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: -20px;
+
+
+
+        a {
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+
+            &:hover {
+                color: var(--text-primary);
+                transform: translateY(-2px);
+            }
+
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+
+
+    @media (max-width: 1024px) {
+        height: auto;
+        padding: 2rem 0;
+
+        .hero-info {
+            margin-bottom: 2rem;
+        }
+
+        .nav-menu {
+            display: none;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+.experience-section {
+    padding: 4rem 0;
+
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            border-radius: 3px;
+        }
+    }
+
+    .resume-item {
+        background: transparent;
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid transparent;
+        transition: var(--transition);
+
+        &:hover {
+            background: var(--bg-primary);
+            border-color: var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .item-details {
+            h4 {
+                color: var(--text-primary);
+                font-size: 1.25rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .company {
+                display: block;
+                font-weight: 600;
+                color: var(--accent-primary);
+                margin-bottom: 0.25rem;
+            }
+
+            .date {
+                display: block;
+                font-size: 0.9rem;
+                color: var(--text-secondary);
+                margin-bottom: 1rem;
+            }
+
+            p {
+                color: var(--text-secondary);
+                line-height: 1.6;
+            }
+        }
+    }
+}
